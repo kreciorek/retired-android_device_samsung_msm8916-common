@@ -748,11 +748,6 @@ on property:ro.use_data_netmgrd=false
 on property:ro.data.large_tcp_window_size=true
     write /proc/sys/net/ipv4/tcp_adv_win_scale  2
 
-service vendor.link_ril_db /vendor/bin/init.link_ril_db.sh
-    class main
-    user root
-    oneshot
-
 service vendor.wlandutservice /vendor/bin/wlandutservice
     class main
     user system
