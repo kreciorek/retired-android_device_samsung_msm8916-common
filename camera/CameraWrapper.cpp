@@ -118,9 +118,13 @@ static int get_product_device()
         product_device = GTE;
     else if (device == "gt510wifi")
         product_device = GTE;
+    else if (device == "gt5note10wifi")
+        product_device = GTE;
     else if (device == "gt58wifi")
         product_device = GTE;
     else if (device == "gt58ltetmo")
+        product_device = GTE;
+    else if (device == "gt58ltebmc")
         product_device = GTE;
     else
         product_device = UNKNOWN;
