@@ -77,12 +77,12 @@ case "$baseband" in
         "concurrent")
             start qti
             if [ "$netmgr" = "true" ]; then
-                start vendor.netmgrd
+
             fi
             ;;
         *)
             if [ "$netmgr" = "true" ]; then
-                start vendor.netmgrd
+
             fi
             ;;
     esac
