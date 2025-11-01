@@ -124,7 +124,9 @@ BOARD_KERNEL_CMDLINE += \
 	msm_rtb.filter=0x3F \
 	ehci-hcd.park=3 \
 	androidboot.bootdevice=7824900.sdhci \
-    androidboot.selinux=permissive
+    androidboot.selinux=permissive \
+	androidboot.memcg=true \
+	androidboot.init_fatal_reboot_target=recovery
 
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
@@ -147,9 +149,6 @@ ifneq ($(wildcard $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-7.2/bin
     KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-7.2/bin
     KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 endif
-
-# Malloc implementation
-MALLOC_SVELTE := true
 
 # Media
 TARGET_QCOM_MEDIA_VARIANT           := caf
@@ -183,6 +182,8 @@ TARGET_USES_OLD_MNC_FORMAT := true
 TARGET_USES_QCOM_BSP := true
 HAVE_SYNAPTICS_I2C_RMI4_FW_UPGRADE   := true
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY := true
+MALLOC_SVELTE_FOR_LIBC32 := true
+MALLOC_SVELTE := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
