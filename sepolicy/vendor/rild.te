@@ -1,0 +1,11 @@
+# ??? idek
+allow rild device:chr_file { read open ioctl };
+
+# Radio
+allow rild radio_core_data_file:dir { write add_name remove_name search };
+allow rild radio_core_data_file:file { create read write open unlink getattr setattr lock ioctl };
+
+allow rild radio_data_file:dir { write add_name remove_name search open read };
+allow rild radio_data_file:file { create read write open unlink getattr setattr lock ioctl };
+
+allow rild proc_net:file { read write open getattr };
