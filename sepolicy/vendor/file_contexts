@@ -4,3 +4,7 @@
 
 # HIDLs
 /(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.software u:object_r:hal_gatekeeper_default_exec:s0
+
+# radio and tele phony
+/data/misc/radio(/.*)?                                       u:object_r:radio_core_data_file:s0
+/data/data/com.android.providers.telephony(/.*)?            u:object_r:radio_data_file:s0
